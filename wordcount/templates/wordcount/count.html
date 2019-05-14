@@ -1,0 +1,31 @@
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+<div Align ="center">
+<h1><mark>당신이 입력한 텍스트는 <!--총단어수--> {{total}} 단어로 구성되어 있습니다.</mark></h1>
+<br><br>
+<h3><a href = "{% url 'home' %}" class="text-danger" >다시하기</a></h3>
+<hr>
+
+<h1><mark>입력한 텍스트: </mark></h1>
+<br><br>
+
+<p class="text-danger">{{fulltext}}</p>
+<hr>
+
+<h1><mark>단어 카운트: </mark></h1>
+<br><br>
+<p class="text-danger">
+{% for word, countTotal in dictionary %}
+{{word}} - {{countTotal}}
+</p>
+<br>
+{% endfor %}
+</div>
